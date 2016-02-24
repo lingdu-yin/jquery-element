@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding:0px;
+			border:none; 
+		}
+		button{
+			width: 200px;
+			height: 46px;
+			font-size: 16px;
+			background-color: #000;
+			color: #fff;
+			margin: auto;
+			display: block;
+			cursor: pointer;
+			margin-top: 100px;
+		}
+	</style>
+</head>
+<body>
+  <input type="checkbox" value="点击">
+  <input type="checkbox" value="点击">
+  <input type="checkbox" value="点击">
+  <input type="checkbox" value="点击">
+  <input type="checkbox" value="点击">
+  <button class="all-check">全选</button>
+  <button class="reverse-check">反选</button>
+	<script type="text/javascript"src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript">
+   $(function(){
+   	$.fn.extend({
+   		allCheck:function(){
+   			this.prop('checked')?this.prop('checked',false):this.prop('checked',true);
+   		},
+   		reverseCheck:function(){
+   			this.each(function(){
+   				$(this).allCheck()
+   			})
+   		}
+
+   	})
+   	//全选||全不选
+   	$('.all-check').click(function(){
+   		$('input').allCheck()
+   	})
+   	//反选
+   	$('.reverse-check').click(function(){
+   		$('input').reverseCheck();
+   	})
+ 
+})
+	</script>
+</body>
+</html>
