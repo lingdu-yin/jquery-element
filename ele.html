@@ -23,11 +23,13 @@
 	</style>
 </head>
 <body>
-  <input type="checkbox" value="点击">
-  <input type="checkbox" value="点击">
-  <input type="checkbox" value="点击">
-  <input type="checkbox" value="点击">
-  <input type="checkbox" value="点击">
+  <div class="checkbox-wrap">
+    <input type="checkbox" value="点击">
+    <input type="checkbox" value="点击">
+    <input type="checkbox" value="点击">
+    <input type="checkbox" value="点击">
+    <input type="checkbox" value="点击">
+  </div>
   <button class="all-check">全选</button>
   <button class="reverse-check">反选</button>
 	<script type="text/javascript"src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
@@ -42,15 +44,14 @@
    				$(this).allCheck()
    			})
    		}
-
    	})
    	//全选||全不选
-   	$('.all-check').click(function(){
-   		$('input').allCheck()
+   	$('.all-check').on('click',function(){ 
+   		$('.checkbox-wrap :checkbox').allCheck()
    	})
    	//反选
-   	$('.reverse-check').click(function(){
-   		$('input').reverseCheck();
+   	$('.reverse-check').on('click',function(){
+   		$('.checkbox-wrap :checkbox').reverseCheck();
    	})
  
 })
